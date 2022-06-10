@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HotelRecordForm">
         <activity
+            android:name=".ui.form.FormActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity

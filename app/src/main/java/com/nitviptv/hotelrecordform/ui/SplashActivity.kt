@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.nitviptv.hotelrecordform.databinding.ActivitySplashBinding
+import com.nitviptv.hotelrecordform.ui.form.FormActivity
 import com.nitviptv.hotelrecordform.ui.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -16,8 +17,9 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(applicationContext, LoginActivity::class.java))
-        }, 3000)
+            startActivity(Intent(applicationContext, FormActivity::class.java))
+            finish()
+        }, 0)
 
 
     }
