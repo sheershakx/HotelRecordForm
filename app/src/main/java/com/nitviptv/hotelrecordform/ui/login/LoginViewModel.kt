@@ -1,20 +1,22 @@
 package com.nitviptv.hotelrecordform.ui.login
 
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.delay
+import com.nitviptv.hotelrecordform.data.repository.LoginRepo
+import com.nitviptv.hotelrecordform.domain.login.LoginResponseData
 import kotlinx.coroutines.launch
 
-class LoginViewModel : ViewModel() {
-    var loginResult: MutableLiveData<Boolean> = MutableLiveData()
+class LoginViewModel(private val loginRepo: LoginRepo) : ViewModel() {
+
+    val loginResult: LiveData<LoginResponseData>
+        get() = loginRepo.loginResult
 
 
-    fun doLogin(userName: String, password: String) {
+    fun doLogin(username: String, password: String) {
         //call api
         viewModelScope.launch {
-            delay(3000)
-            loginResult.value = false
+            loginRepo.doVendorLogin(LoginRepo.Params(username, password))
         }
     }
 }

@@ -1,12 +1,19 @@
 package com.nitviptv.hotelrecordform.utils
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.widget.EditText
+import android.widget.Toast
 import androidx.core.view.get
 import java.text.SimpleDateFormat
 import java.util.*
+
+
+fun Context.toast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
 
 fun EditText.transformIntoDatePicker(
     context: Context,
