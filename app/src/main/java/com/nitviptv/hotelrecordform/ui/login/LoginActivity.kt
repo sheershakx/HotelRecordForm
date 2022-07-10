@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.nitviptv.hotelrecordform.data.ApiInterface
 import com.nitviptv.hotelrecordform.data.repository.LoginRepo
 import com.nitviptv.hotelrecordform.databinding.ActivityLoginBinding
+import com.nitviptv.hotelrecordform.ui.dashboard.DashboardActivity
 import com.nitviptv.hotelrecordform.ui.form.FormActivity
 import com.nitviptv.hotelrecordform.utils.toast
 
@@ -29,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.loginResult.observe(this, Observer { loginResult ->
             Log.d("Sheershak", "$loginResult")
             if (loginResult.ID != 0) {
-                startActivity(Intent(this, FormActivity::class.java))
+                startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
             } else toast("Login Details Incorrect.")
         })

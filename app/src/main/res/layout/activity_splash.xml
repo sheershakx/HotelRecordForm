@@ -6,14 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.SplashActivity">
 
+    <ImageView
+        android:id="@+id/img_splash"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_hotel"
+        app:layout_constraintBottom_toTopOf="@id/txt_splash_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <TextView
+        android:id="@+id/txt_splash_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Splash Screen"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/splash_text"
         android:textColor="@color/purple_700"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/img_splash" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
